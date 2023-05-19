@@ -23,17 +23,10 @@ function M.config()
       javascript = { "string", "template_string" },
       java = false,
     },
-    fast_wrap = {
-      map = "<M-e>",
-      chars = { "{", "[", "(", '"', "'" },
-      pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
-      offset = 0, -- Offset from pattern match
-      end_key = "$",
-      keys = "qwertyuiopzxcvbnmasdfghjkl",
-      check_comma = true,
-      highlight = "PmenuSel",
-      highlight_grey = "LineNr",
-    },
+
+    fast_wrap = {},
+    ignored_next_char = "[%w%.]", -- will ignore alphanumeric and `.` symbol
+    enable_check_bracket_line = true,
   }
 
   local cmp_autopairs = require "nvim-autopairs.completion.cmp"

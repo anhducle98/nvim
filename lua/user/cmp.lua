@@ -19,19 +19,6 @@ local M = {
       commit = "23c51b2a3c00f6abc4e922dbd7c3b9aca6992063",
     },
     {
-      "saadparwaiz1/cmp_luasnip",
-      commit = "18095520391186d634a0045dacaa346291096566",
-    },
-    {
-      "L3MON4D3/LuaSnip",
-      commit = "9bff06b570df29434a88f9c6a9cea3b21ca17208",
-      event = "InsertEnter",
-      dependencies = {
-        "rafamadriz/friendly-snippets",
-        commit = "a6f7a1609addb4e57daa6bedc300f77f8d225ab7",
-      },
-    },
-    {
       "hrsh7th/cmp-nvim-lua",
       commit = "f3491638d123cfd2c8048aefaf66d246ff250ca6",
     },
@@ -44,8 +31,6 @@ local M = {
 
 function M.config()
   local cmp = require "cmp"
-  local luasnip = require "luasnip"
-  require("luasnip/loaders/from_vscode").lazy_load()
 
   local check_backspace = function()
     local col = vim.fn.col "." - 1
@@ -82,10 +67,12 @@ function M.config()
 
   cmp.setup {
     snippet = {
+      -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-        luasnip.lsp_expand(args.body) -- For `luasnip` users.
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
       end,
     },
+
     mapping = cmp.mapping.preset.insert {
       ["<C-k>"] = cmp.mapping.select_prev_item(),
       ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -102,31 +89,29 @@ function M.config()
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
-        elseif luasnip.expandable() then
-          luasnip.expand()
-        elseif luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
+          -- elseif luasnip.expandable() then
+          --   luasnip.expand()
+          -- elseif luasnip.expand_or_jumpable() then
+          --   luasnip.expand_or_jump()
         elseif check_backspace() then
           fallback()
         else
           fallback()
         end
       end, {
-        "i",
-        "s",
-      }),
+          "i",
+          "s",
+        }),
       ["<S-Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_prev_item()
-        elseif luasnip.jumpable(-1) then
-          luasnip.jump(-1)
         else
           fallback()
         end
       end, {
-        "i",
-        "s",
-      }),
+          "i",
+          "s",
+        }),
     },
     formatting = {
       fields = { "kind", "abbr", "menu" },
@@ -134,8 +119,6 @@ function M.config()
         vim_item.kind = kind_icons[vim_item.kind]
         vim_item.menu = ({
           nvim_lsp = "",
-          nvim_lua = "",
-          luasnip = "",
           buffer = "",
           path = "",
           emoji = "",
@@ -145,8 +128,7 @@ function M.config()
     },
     sources = {
       { name = "nvim_lsp" },
-      { name = "nvim_lua" },
-      { name = "luasnip" },
+      { name = "vsnip" },
       { name = "buffer" },
       { name = "path" },
     },
