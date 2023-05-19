@@ -22,6 +22,8 @@ local M = {
       "hrsh7th/cmp-nvim-lua",
       commit = "f3491638d123cfd2c8048aefaf66d246ff250ca6",
     },
+    { "hrsh7th/cmp-vsnip", },
+    { "hrsh7th/vim-vsnip", },
   },
   event = {
     "InsertEnter",
