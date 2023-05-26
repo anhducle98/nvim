@@ -40,6 +40,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
   callback = function()
     vim.cmd "hi link illuminatedWord LspReferenceText"
+    vim.cmd "highlight CursorLine guibg=#1e1e1e"
   end,
 })
 
@@ -51,3 +52,4 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
     end
   end,
 })
+
