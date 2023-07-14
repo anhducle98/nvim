@@ -5,7 +5,7 @@ return {
   args = {
     "-xc++",
     "--background-index",
-    "-std=c++20",
+    "-std=c++2b",
     "--pch-storage=memory",
     "--clang-tidy",
     "--suggest-missing-includes",

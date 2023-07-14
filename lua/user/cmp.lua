@@ -1,26 +1,26 @@
 local M = {
   "hrsh7th/nvim-cmp",
-  commit = "cfafe0a1ca8933f7b7968a287d39904156f2c57d",
+  -- commit = "cfafe0a1ca8933f7b7968a287d39904156f2c57d",
   dependencies = {
     {
       "hrsh7th/cmp-nvim-lsp",
-      commit = "0e6b2ed705ddcff9738ec4ea838141654f12eeef",
+      -- commit = "0e6b2ed705ddcff9738ec4ea838141654f12eeef",
     },
     {
       "hrsh7th/cmp-buffer",
-      commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa",
+      -- commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa",
     },
     {
       "hrsh7th/cmp-path",
-      commit = "91ff86cd9c29299a64f968ebb45846c485725f23",
+      -- commit = "91ff86cd9c29299a64f968ebb45846c485725f23",
     },
     {
       "hrsh7th/cmp-cmdline",
-      commit = "23c51b2a3c00f6abc4e922dbd7c3b9aca6992063",
+      -- commit = "23c51b2a3c00f6abc4e922dbd7c3b9aca6992063",
     },
     {
       "hrsh7th/cmp-nvim-lua",
-      commit = "f3491638d123cfd2c8048aefaf66d246ff250ca6",
+      -- commit = "f3491638d123cfd2c8048aefaf66d246ff250ca6",
     },
     { "hrsh7th/cmp-vsnip", },
     { "hrsh7th/vim-vsnip", },
@@ -39,33 +39,33 @@ function M.config()
     return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
   end
 
-  local kind_icons = {
-    Text = "",
-    Method = "",
-    Function = "",
-    Constructor = "",
-    Field = "",
-    Variable = "",
-    Class = "",
-    Interface = "",
-    Module = "",
-    Property = "",
-    Unit = "",
-    Value = "",
-    Enum = "",
-    Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "",
-    Struct = "",
-    Event = "",
-    Operator = "",
-    TypeParameter = "",
-  }
+  -- local kind_icons = {
+  --   Text = "",
+  --   Method = "",
+  --   Function = "",
+  --   Constructor = "",
+  --   Field = "",
+  --   Variable = "",
+  --   Class = "",
+  --   Interface = "",
+  --   Module = "",
+  --   Property = "",
+  --   Unit = "",
+  --   Value = "",
+  --   Enum = "",
+  --   Keyword = "",
+  --   Snippet = "",
+  --   Color = "",
+  --   File = "",
+  --   Reference = "",
+  --   Folder = "",
+  --   EnumMember = "",
+  --   Constant = "",
+  --   Struct = "",
+  --   Event = "",
+  --   Operator = "",
+  --   TypeParameter = "",
+  -- }
 
   cmp.setup {
     snippet = {
@@ -115,19 +115,19 @@ function M.config()
           "s",
         }),
     },
-    formatting = {
-      fields = { "kind", "abbr", "menu" },
-      format = function(entry, vim_item)
-        vim_item.kind = kind_icons[vim_item.kind]
-        vim_item.menu = ({
-          nvim_lsp = "",
-          buffer = "",
-          path = "",
-          emoji = "",
-        })[entry.source.name]
-        return vim_item
-      end,
-    },
+    -- formatting = {
+    --   fields = { "kind", "abbr", "menu" },
+    --   format = function(entry, vim_item)
+    --     vim_item.kind = kind_icons[vim_item.kind]
+    --     vim_item.menu = ({
+    --       nvim_lsp = "",
+    --       buffer = "",
+    --       path = "",
+    --       emoji = "",
+    --     })[entry.source.name]
+    --     return vim_item
+    --   end,
+    -- },
     sources = {
       { name = "nvim_lsp" },
       { name = "vsnip" },
