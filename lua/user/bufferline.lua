@@ -25,11 +25,9 @@ function M.config()
       middle_mouse_command = nil,          -- can be a string | function, | false see "Mouse actions"
       style_preset = bufferline.style_preset.no_italic,
       indicator = {
-        -- icon = '▎', -- this should be omitted if indicator style is not 'icon'
-        -- style = 'icon', -- | 'underline' | 'none',
-        style = 'underline', -- | 'underline' | 'none',
+        -- style = 'underline',
+        style = 'none',
       },
-      -- buffer_close_icon = '',
       modified_icon = '●',
       close_icon = '',
       left_trunc_marker = '',
@@ -45,7 +43,8 @@ function M.config()
           filetype = "NvimTree",
           text = "File Explorer",
           text_align = "left",
-          separator = true,
+          padding = 1,
+          -- separator = true,
         }
       },
       color_icons = true, -- whether or not to add the filetype icon highlights

@@ -57,7 +57,7 @@ function M.config()
       },
     },
     view = {
-      width = 40,
+      width = 35,
       side = "left",
       mappings = {
         list = {

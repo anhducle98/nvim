@@ -15,19 +15,9 @@ function M.config()
     keywordStyle = { italic = false },
     statementStyle = { bold = true },
     typeStyle = { italic = false },
-    transparent = true,         -- do not set background color
+    -- transparent = true,         -- do not set background color
     dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
     terminalColors = true,       -- define vim.g.terminal_color_{0,17}
-    colors = {                   -- add/modify theme and palette colors
-      palette = {},
-      theme = {
-        all = {
-          ui = {
-            bg_gutter = "none",
-          }
-        }
-      },
-    },
     overrides = function(colors) -- add/modify highlights
       local theme = colors.theme
       return {
