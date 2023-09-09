@@ -55,3 +55,5 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.tabstop = 4
 	end
 })
+
+vim.opt.cinkeys:remove {":"}
