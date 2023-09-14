@@ -16,13 +16,13 @@ function M.config()
       latex = 'rainbow-blocks',
     },
     highlight = {
-      'RainbowDelimiterRed',
       'RainbowDelimiterYellow',
       'RainbowDelimiterBlue',
       'RainbowDelimiterOrange',
       'RainbowDelimiterGreen',
       'RainbowDelimiterViolet',
       'RainbowDelimiterCyan',
+      'RainbowDelimiterRed',
     },
   }
 end
