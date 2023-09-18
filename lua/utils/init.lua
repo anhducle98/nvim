@@ -2,8 +2,9 @@ local M = {}
 
 M.servers = {
   "clangd",
-	"pyright",
+  "pyright",
   "gopls",
+  "rust_analyzer",
 }
 
 return M
