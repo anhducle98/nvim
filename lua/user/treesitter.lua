@@ -30,9 +30,11 @@ function M.config()
       disable = { "css" }, -- list of language that will be disabled
     },
     autopairs = {
-      enable = true,
+      -- enable = true,
+      enable = false,
     },
-    indent = { enable = true },
+    -- indent = { enable = true },
+    indent = { enable = false },
 
     context_commentstring = {
       enable = true,
