@@ -5,7 +5,7 @@ local M = {
     config = function()
         require("dark_modern").setup({
             cursorline = true,
-            transparent_background = false,
+            transparent_background = true,
             nvim_tree_darker = true,
         })
         vim.cmd.colorscheme("dark_modern")
