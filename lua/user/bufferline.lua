@@ -60,7 +60,7 @@ function M.config()
       -- can also be a table containing 2 custom separators
       -- [focused and unfocused]. eg: { '|', '|' }
       -- separator_style = "thin",
-      separator_style = "slant",
+      separator_style = "thin",
       enforce_regular_tabs = false,
       always_show_bufferline = true,
       hover = {
