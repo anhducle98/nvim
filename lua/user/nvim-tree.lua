@@ -5,21 +5,21 @@ local M = {
 }
 
 function M.config()
-  require("nvim-tree").setup {}
+  -- require("nvim-tree").setup {}
   -- local tree_cb = require("nvim-tree.config").nvim_tree_callback
-  -- require("nvim-tree").setup {
-  --   disable_netrw = true,
-  --   hijack_netrw = true,
-  --   open_on_tab = false,
-  --   hijack_cursor = true,
-  --   hijack_unnamed_buffer_when_opening = false,
-  --   update_focused_file = {
-  --     enable = true,
-  --     update_root = false,
-  --   },
-  --   sync_root_with_cwd = false,
-  --   prefer_startup_root = true,
-  --   respect_buf_cwd = false,
+  require("nvim-tree").setup {
+    disable_netrw = true,
+    hijack_netrw = true,
+    open_on_tab = false,
+    hijack_cursor = true,
+    hijack_unnamed_buffer_when_opening = false,
+    update_focused_file = {
+      enable = true,
+      update_root = false,
+    },
+    sync_root_with_cwd = false,
+    prefer_startup_root = true,
+    respect_buf_cwd = false,
   --   renderer = {
   --     icons = {
   --       glyphs = {
@@ -77,7 +77,7 @@ function M.config()
   --       resize_window = true,
   --     },
   --   },
-  -- }
+  }
 end
 
 return M
