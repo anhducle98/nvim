@@ -53,3 +53,5 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   end,
 })
 
+-- Cursor style
+vim.cmd "autocmd VimLeave * set guicursor=a:ver1-blinkon1"
