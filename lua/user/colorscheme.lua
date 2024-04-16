@@ -5,7 +5,9 @@ local M = {
     config = function()
         require("vscode_modern").setup({
             cursorline = true,
-            transparent_background = true,
+            -- transparent_background = true,
+            transparent_background = false,
+            custom_dark_background = '#000000',
             nvim_tree_darker = true,
         })
         vim.cmd.colorscheme("vscode_modern")
