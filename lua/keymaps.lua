@@ -32,6 +32,26 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+keymap("n", "<S-h>", "<Plug>(cokeline-focus-prev)", { silent = true })
+keymap("n", "<S-l>", "<Plug>(cokeline-focus-next)", { silent = true })
+keymap("n", "<Leader>p", "<Plug>(cokeline-switch-prev)", { silent = true })
+keymap("n", "<Leader>n", "<Plug>(cokeline-switch-next)", { silent = true })
+
+for i = 1, 9 do
+  keymap(
+    "n",
+    ("<Leader>%s"):format(i),
+    ("<Plug>(cokeline-focus-%s)"):format(i),
+    { silent = true }
+  )
+  -- keymap(
+  --   "n",
+  --   ("<Leader>%s"):format(i),
+  --   ("<Plug>(cokeline-switch-%s)"):format(i),
+  --   { silent = true }
+  -- )
+end
+
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
@@ -39,7 +59,7 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 keymap("n", "<leader>w", ":w<CR>", opts)
 
 -- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<S-q>", "<cmd>bdelete!<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
@@ -75,12 +95,12 @@ keymap("x", "<leader>/", "<esc><cmd>lua require('Comment.api').toggle.linewise(v
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
 
 -- Bufferline
-keymap("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", opts)
-keymap("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<cr>", opts)
-keymap("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<cr>", opts)
-keymap("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<cr>", opts)
-keymap("n", "<leader>5", "<cmd>BufferLineGoToBuffer 5<cr>", opts)
-keymap("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<cr>", opts)
-keymap("n", "<leader>7", "<cmd>BufferLineGoToBuffer 7<cr>", opts)
-keymap("n", "<leader>8", "<cmd>BufferLineGoToBuffer 8<cr>", opts)
-keymap("n", "<leader>9", "<cmd>BufferLineGoToBuffer 9<cr>", opts)
+-- keymap("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", opts)
+-- keymap("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<cr>", opts)
+-- keymap("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<cr>", opts)
+-- keymap("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<cr>", opts)
+-- keymap("n", "<leader>5", "<cmd>BufferLineGoToBuffer 5<cr>", opts)
+-- keymap("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<cr>", opts)
+-- keymap("n", "<leader>7", "<cmd>BufferLineGoToBuffer 7<cr>", opts)
+-- keymap("n", "<leader>8", "<cmd>BufferLineGoToBuffer 8<cr>", opts)
+-- keymap("n", "<leader>9", "<cmd>BufferLineGoToBuffer 9<cr>", opts)

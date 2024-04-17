@@ -27,7 +27,13 @@ function M.config()
 
     highlight = {
       enable = true,       -- false will disable the whole extension
-      disable = { "css" }, -- list of language that will be disabled
+      disable = function(lang)
+        local buf_name = vim.fn.expand("%")
+        if lang == "go" and string.find(buf_name, ".expr") then
+          return true
+        end
+        return false
+      end
     },
     autopairs = {
       -- enable = true,
