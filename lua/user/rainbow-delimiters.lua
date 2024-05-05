@@ -6,7 +6,7 @@ local M = {
 function M.config()
   local rainbow_delimiters = require 'rainbow-delimiters'
 
-  require("rainbow-delimiters.setup") {}
+  require("rainbow-delimiters.setup") {
   --   strategy = {
   --     [''] = rainbow_delimiters.strategy['global'],
   --     commonlisp = rainbow_delimiters.strategy['local'],
@@ -15,16 +15,16 @@ function M.config()
   --     [''] = 'rainbow-delimiters',
   --     latex = 'rainbow-blocks',
   --   },
-  --   highlight = {
-  --     'RainbowDelimiterRed',
-  --     'RainbowDelimiterYellow',
-  --     'RainbowDelimiterBlue',
-  --     'RainbowDelimiterOrange',
-  --     'RainbowDelimiterGreen',
-  --     'RainbowDelimiterViolet',
-  --     'RainbowDelimiterCyan',
-  --   },
-  -- }
+    highlight = {
+      'RainbowDelimiterYellow',
+      'RainbowDelimiterBlue',
+      'RainbowDelimiterOrange',
+      'RainbowDelimiterGreen',
+      'RainbowDelimiterViolet',
+      'RainbowDelimiterCyan',
+      'RainbowDelimiterRed',
+    },
+  }
 end
 
 return M

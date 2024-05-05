@@ -1,26 +1,23 @@
 local M = {
   "hrsh7th/nvim-cmp",
-  -- commit = "cfafe0a1ca8933f7b7968a287d39904156f2c57d",
   dependencies = {
     {
       "hrsh7th/cmp-nvim-lsp",
-      -- commit = "0e6b2ed705ddcff9738ec4ea838141654f12eeef",
+    },
+    {
+      "hrsh7th/cmp-nvim-lsp-signature-help",
     },
     {
       "hrsh7th/cmp-buffer",
-      -- commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa",
     },
     {
       "hrsh7th/cmp-path",
-      -- commit = "91ff86cd9c29299a64f968ebb45846c485725f23",
     },
     {
       "hrsh7th/cmp-cmdline",
-      -- commit = "23c51b2a3c00f6abc4e922dbd7c3b9aca6992063",
     },
     {
       "hrsh7th/cmp-nvim-lua",
-      -- commit = "f3491638d123cfd2c8048aefaf66d246ff250ca6",
     },
     { "hrsh7th/cmp-vsnip", },
     { "hrsh7th/vim-vsnip", },
@@ -130,6 +127,7 @@ function M.config()
     -- },
     sources = {
       { name = "nvim_lsp" },
+      { name = 'nvim_lsp_signature_help' },
       { name = "vsnip" },
       { name = "buffer" },
       { name = "path" },
