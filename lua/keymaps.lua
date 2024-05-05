@@ -97,6 +97,9 @@ keymap("x", "<leader>/", "<esc><cmd>lua require('Comment.api').toggle.linewise(v
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
 
+-- Switch to header/source file
+keymap("n", "<leader>ll", "<cmd>ClangdSwitchSourceHeader<cr>", opts)
+
 -- Bufferline
 -- keymap("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", opts)
 -- keymap("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<cr>", opts)
