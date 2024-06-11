@@ -23,7 +23,7 @@ function M.config()
       globalstatus = true,
       icons_enabled = true,
       -- theme = "auto",
-      theme = "onedark",
+      theme = "ayu",
       component_separators = { left = "", right = "" },
       section_separators = { left = "", right = "" },
       disabled_filetypes = { "alpha", "dashboard", "Nvim-Tree" },
