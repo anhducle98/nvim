@@ -5,6 +5,7 @@ M.servers = {
   "pyright",
   "gopls",
   "rust_analyzer",
+  "svlangserver",
 }
 
 return M

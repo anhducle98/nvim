@@ -1,33 +1,29 @@
 local M = {
   "nvim-telescope/telescope.nvim",
-  -- commit = "203bf5609137600d73e8ed82703d6b0e320a5f36",
-  event = "Bufenter",
   cmd = { "Telescope" },
-  dependencies = {
-    {
-      "ahmedkhalf/project.nvim",
-      -- commit = "685bc8e3890d2feb07ccf919522c97f7d33b94e4",
-    },
-  },
+  dependencies = { 'nvim-lua/plenary.nvim' }
 }
 
-local actions = require "telescope.actions"
+function M.config()
+  local telescope = require("telescope");
+  local actions = require "telescope.actions";
 
-M.opts = {
-  defaults = {
-    prompt_prefix = " ",
-    selection_caret = " ",
-    path_display = { "absolute" },
-    file_ignore_patterns = { ".git/" },
-    mappings = {
-      i = {
-        ["<Down>"] = actions.move_selection_next,
-        ["<Up>"] = actions.move_selection_previous,
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
+  telescope.setup {
+    defaults = {
+      prompt_prefix = " ",
+      selection_caret = " ",
+      path_display = { "absolute" },
+      file_ignore_patterns = { ".git/" },
+      mappings = {
+        i = {
+          ["<Down>"] = actions.move_selection_next,
+          ["<Up>"] = actions.move_selection_previous,
+          ["<C-j>"] = actions.move_selection_next,
+          ["<C-k>"] = actions.move_selection_previous,
+        },
       },
     },
-  },
-}
+  }
+end
 
 return M
