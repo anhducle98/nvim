@@ -26,8 +26,8 @@ function M.config()
       theme = "ayu",
       component_separators = { left = "", right = "" },
       section_separators = { left = "", right = "" },
-      disabled_filetypes = { "alpha", "dashboard", "Nvim-Tree" },
-      ignore_focus = { "Nvim-Tree" },
+      disabled_filetypes = { "alpha", "dashboard", "Nvim-Tree" , "neo-tree" },
+      ignore_focus = { "Nvim-Tree" , "neo-tree"},
       always_divide_middle = true,
     },
     sections = {
@@ -38,7 +38,7 @@ function M.config()
       lualine_y = { location },
       lualine_z = { "progress" },
     },
-    extensions = { "nvim-tree" },
+    extensions = { "nvim-tree", "neo-tree" },
   }
 end
 
