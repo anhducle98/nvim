@@ -1,6 +1,6 @@
 local M = {
   "willothy/nvim-cokeline",
-  -- event = { "BufReadPre", "BufAdd", "BufNew", "BufReadPost" },
+  event = { "BufReadPre", "BufAdd", "BufNew", "BufReadPost" },
   dependencies = {
     "nvim-lua/plenary.nvim",        -- Required for v0.4.0+
     "nvim-tree/nvim-web-devicons", -- If you want devicons
