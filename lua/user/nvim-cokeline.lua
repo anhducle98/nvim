@@ -1,6 +1,6 @@
 local M = {
   "willothy/nvim-cokeline",
-  event = { "BufReadPre", "BufAdd", "BufNew", "BufReadPost" },
+  -- event = { "BufReadPre", "BufAdd", "BufNew", "BufReadPost" },
   dependencies = {
     "nvim-lua/plenary.nvim",        -- Required for v0.4.0+
     "nvim-tree/nvim-web-devicons", -- If you want devicons
@@ -10,21 +10,19 @@ local M = {
 
 function M.config()
   local get_hex = require('cokeline.hlgroups').get_hl_attr
-  local yellow = vim.g.terminal_color_3
 
   require('cokeline').setup({
     default_hl = {
       fg = function(buffer)
-        return
-        buffer.is_focused
-        and get_hex('ColorColumn', 'bg')
-        or get_hex('Normal', 'fg')
+        return buffer.is_focused
+        and '#000000'
+        or '#E5E5E5'
       end,
       bg = function(buffer)
         return
         buffer.is_focused
-        and get_hex('Normal', 'fg')
-        or get_hex('ColorColumn', 'bg')
+        and '#E5E5E5'
+        or '#000000'
       end,
     },
 
@@ -33,10 +31,10 @@ function M.config()
       components = {
         {
           text = function(buf)
-            return buf.filetype
+            return 'File Explorer'
           end,
-          fg = yellow,
-          bg = function() return get_hex('NvimTreeNormal', 'bg') end,
+          fg = '#E5E54D',
+          bg = '#000000',
           bold = true,
         },
       }
