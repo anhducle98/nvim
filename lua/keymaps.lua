@@ -98,14 +98,3 @@ keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opt
 
 -- Switch to header/source file
 keymap("n", "<leader>ll", "<cmd>ClangdSwitchSourceHeader<cr>", opts)
-
--- Bufferline
--- keymap("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", opts)
--- keymap("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<cr>", opts)
--- keymap("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<cr>", opts)
--- keymap("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<cr>", opts)
--- keymap("n", "<leader>5", "<cmd>BufferLineGoToBuffer 5<cr>", opts)
--- keymap("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<cr>", opts)
--- keymap("n", "<leader>7", "<cmd>BufferLineGoToBuffer 7<cr>", opts)
--- keymap("n", "<leader>8", "<cmd>BufferLineGoToBuffer 8<cr>", opts)
--- keymap("n", "<leader>9", "<cmd>BufferLineGoToBuffer 9<cr>", opts)
