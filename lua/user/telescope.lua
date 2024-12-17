@@ -22,6 +22,11 @@ function M.config()
           ["<C-k>"] = actions.move_selection_previous,
         },
       },
+      layout_config = {
+        width = function(_, max_columns, _)
+          return max_columns
+        end,
+      }
     },
   }
 end
